@@ -18,5 +18,5 @@
 * [RANDRIAMANANA Marianne](https://marianner13.github.io/VR/)
 * [SANCHES Sara](https://saraschs.github.io/VR/)
 
-* {test](https://wmurphyrd.github.io/aframe-physics-extras/examples/collision_response/)
+* [test](https://wmurphyrd.github.io/aframe-physics-extras/examples/collision_response/)
 	

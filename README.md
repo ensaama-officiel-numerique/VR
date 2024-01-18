@@ -4,7 +4,7 @@
 
 * [BAKIR Ilian](https://ilianxx.github.io/vr/)
 * [BELLAHOUES Elissa](https://elibellah.github.io/VR/)
-* [BUGNET-SALLES Hugo](https://hugobugnet.github.io/VR/)
+* [BUGNET-SALLES Hugo](https://hugobugnet.github.io/Labyrinthe2/)
 * [CONILLEAU Kali](https://kali-cogi.github.io/VR/)
 * [CONTE Isadora](https://isadoraconte.github.io/VR/)
 * [FOURNIER Laureline](https://laureline5.github.io/VR/)
@@ -17,6 +17,7 @@
 * [PUEL GLIKSON Annaelle](https://annaespace.github.io/VR/)
 * [RANDRIAMANANA Marianne](https://marianner13.github.io/VR/)
 * [SANCHES Sara](https://saraschs.github.io/VR/)
+* [Eli](https://elibellah.github.io/VR/)
 
 * [test](https://wmurphyrd.github.io/aframe-physics-extras/examples/collision_response/)
 	

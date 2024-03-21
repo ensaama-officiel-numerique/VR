@@ -20,4 +20,7 @@
 * [Eli](https://elibellah.github.io/VR/)
 
 * [test](https://wmurphyrd.github.io/aframe-physics-extras/examples/collision_response/)
+
+## iamflying
+* [demo](./projet_iamflying/iamflying.html)
 	

@@ -1,0 +1,136 @@
+<!-- https://www.w3docs.com/snippets/javascript/how-to-create-and-trigger-event-in-javascript.html -->
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+    <!-- <script src="./assets/aframe-physics-system.min.js"></script> -->
+    <script src="https://eminet666.github.io/ensaama/components/detect/detect.js"></script>
+    <script src="https://eminet666.github.io/ensaama/components/debug/debug.js"></script>
+    <script>
+    let gauche = { pos: { x: 0, y: 0, z: 0 } }
+    let droite = { pos: { x: 0, y: 0, z: 0 } }    
+
+        // AFRAME.registerComponent('gravity', {
+        //     init: function () {
+        //         this.el.setAttribute('velocity', { x: 0, y: -9.8, z: 0 });
+        //     }
+        // });
+
+        AFRAME.registerComponent('fly', {
+            schema: {
+                trace: { type: 'boolean', default: false },
+            },            
+            init: function () {
+                // DESKTOP MODE
+                window.addEventListener('keydown', function (event) {
+                    if (event.key === 'y') {
+                        console.log(id + " evt: ykeydown");
+                        var el = document.querySelector('#player');
+                        el.setAttribute('velocity', { x: 0, y: 1, z: 0 });
+                    }
+                    if (event.key === 'u') {
+                        console.log("evt: ukeydown");
+                        var el = document.querySelector('#player');
+                        el.setAttribute('velocity', { x: 0, y: -1, z: 0 });
+                    }
+                    if (event.key === 'o') {
+                        console.log("evt: okeydown");
+                        var el = document.querySelector('#player');
+                        el.setAttribute('velocity', { x: 0, y: 0, z: 0 });
+                    }
+                });
+            },
+            tick: function () {
+                // VR MODE
+                // var velocity = gauche.pos;
+                // velocity.y -= 1;
+                var velocity = new THREE.Vector3(0, 0.1, 0);
+                var camera = document.querySelector('#cam');
+                camera.object3D.position.addScaledVector(velocity, timeDelta / 1000);                
+                
+                if (this.data.trace) {
+                    var trace = document.querySelector('#txtlog');
+                    var newvalue = 'velocity = ' + velocity.y.toFixed(2);
+                    trace.setAttribute('value', newvalue);
+                }
+            }            
+        
+        });
+
+        AFRAME.registerComponent('handposition', {
+            schema: {
+                trace: {
+                    type: 'boolean',
+                    default: false
+                },
+            },
+            tick: function () {
+                var handpos = this.el.object3D.position;
+                var id = this.el.id;
+                if(id=="lefthand") gauche.pos = handpos;
+                if(id=="righthand") droite.pos = handpos;
+
+                if (this.data.trace) {
+                    var trace = document.querySelector('#txtlog');
+                    var newvalue = 'hand '+id+' y = ' + gauche.pos.y.toFixed(2);
+                    trace.setAttribute('value', newvalue);
+                }
+            }
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <a-scene frequency="delay: 500;" renderer="antialias: true"
+    debug-keyboard="key: b; event: xbuttondown; target: #lefthand">
+
+        <!-- DEBUT LABYRINTHE -->
+        <a-assets>
+            <img id="sky" src="./assets/puresky.jpg">
+        </a-assets>
+
+        <a-plane position="0 0 0" rotation="-90 0 0" 
+            width="1" height="1" color="grey"></a-plane>
+
+        <!-- PHOTO360 -->
+        <a-sky id="image-360" radius="10" src="#sky"></a-sky>
+        <!-- FIN LANYRINTHE -->
+
+        <!-- PLAYER -->
+        <a-entity id="player" position="0 0 0" fly="trace: true">
+            <a-entity id="cam" camera position="0 0.5 0" currentposition="trace:false"
+                look-controls wasd-controls="acceleration:10">
+                <a-text id="txtlog" value="" align="center" color="#0000FF" 
+                    position="0 0 -1" rotation="0 0 0" scale="0.25 0.25 0.25">
+                </a-text>
+            </a-entity>
+            <a-entity id="lefthand" handposition="trace: false" oculus-touch-controls="hand: left"></a-entity>
+            <a-entity id="righthand" handposition="trace: false" oculus-touch-controls="hand: right" droite></a-entity> -->
+        </a-entity>
+
+    </a-scene>
+
+</body>
+
+</html>
+
+AFRAME.registerComponent('move', {
+init: function () {
+this.velocity = new THREE.Vector3(0, 0, 0);
+},
+tick: function (time, timeDelta) {
+var position = this.el.getAttribute('position');
+var velocityScaled = this.velocity.clone().multiplyScalar(timeDelta / 1000);
+position.x += velocityScaled.x;
+position.y += velocityScaled.y;
+position.z += velocityScaled.z;
+this.el.setAttribute('position', position);
+}
+});
+

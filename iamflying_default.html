@@ -110,14 +110,11 @@
                     var trace = document.querySelector('#txtlog');
                     var newvalue = 'entity = ' + this.el.id
                         + '\n useragent = QUEST'                        
-                        + '\n gauche_x = ' + gauche.pos.x.toFixed(2)
-                        + '\n gauche_z = ' + gauche.pos.z.toFixed(2)
-                        + '\n delta_x = ' + delta_x.toFixed(4)
-                        + '\n delta_y = ' + delta_y.toFixed(4)
-                        + '\n delta_z = ' + delta_z.toFixed(4)
+                        + '\n gauche x_y_z = ' + gauche.pos.x.toFixed(2) + '_' + gauche.pos.y.toFixed(2) + '_' + gauche.pos.z.toFixed(2)
+                        + '\n delta x_y_z = ' + delta_x.toFixed(4) + '_' + delta_y.toFixed(4) + '_' + delta_z.toFixed(4)
                         + '\n scalaire.y = ' + this.scalaire.y
-                        + '\n position x_y_z = ' + position.y.toFixed(2) +"_" + position.y.toFixed(2) + "_" + position.y.toFixed(2)
-                        + '\n player.pos.y = ' + player.pos.y.toFixed(2);
+                        + '\n position x_y_z = ' + position.y.toFixed(2) +'_' + position.y.toFixed(2) + '_' + position.y.toFixed(2)
+                        + '\n player.pos x_y_z = ' + player.pos.x.toFixed(2) + '_' + player.pos.y.toFixed(2) + '_' +player.pos.z.toFixed(2);
                     if (!info) newvalue = "";                            
                     trace.setAttribute('value', newvalue);
                 }
@@ -128,8 +125,8 @@
                     var position = this.el.getAttribute('position');
                     var newvalue = 'entity = ' + this.el.id
                         + '\n useragent = ORDI'
-                        + '\n position.y = ' + position.y.toFixed(2)
-                        + '\n player.pos.y = ' + player.pos.y.toFixed(2);
+                        + '\n position x_y_z = ' + position.x.toFixed(2) + '_' + position.y.toFixed(2) + '_' + position.z.toFixed(2)
+                        + '\n player.pos x_y_z = ' + player.pos.x.toFixed(2) + '_' + player.pos.y.toFixed(2) + '_' + player.pos.z.toFixed(2);
                     if(!info) newvalue ="";
                     trace.setAttribute('value', newvalue);
                 }  

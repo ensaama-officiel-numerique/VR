@@ -16,7 +16,7 @@
     <a-scene frequency="delay: 500;" renderer="antialias: true"
     debug-keyboard="key: v,b,n; event: xbuttondown, ybuttondown, abuttondown; target: #lefthand, #lefthand, #righthand">
 
-        <!-- DEBUT -->
+        <!-- RESSOURCES -->
         <a-assets>
             <img id="sky0" src="./assets/puresky.jpg">
             <img id="sky1" src="./assets/evening_road_01_puresky_4k.jpg">
@@ -24,12 +24,13 @@
             <img id="sky3" src="./assets/table_mountain_2_puresky_4k.jpg">
         </a-assets>
 
+        <!-- BASE -->
         <a-plane position="0 0 0" rotation="-90 0 0" 
             width="1" height="1"  material="color: grey; side: double"></a-plane>
 
-        <!-- PHOTO360 -->
+        <!-- DEBUT ETUDIANT -->
         <a-sky id="image-360" radius="500" change-sky radius="10" src="#sky0"></a-sky>
-        <!-- FIN -->
+        <!-- FIN ETUDIANT -->
 
         <!-- PLAYER -->
         <a-entity id="player" position="0 0 0" fly="scalaire: 0.05 0.05 0.05; trace: true">

@@ -21,6 +21,7 @@
 ## iamflying
 * [link](./projet_iamflying/iamflying.html)
 * [full](./projet_iamflying/iamflying_full.html)
+* [full_new](./projet_iamflying/iamflying_full_new.html)
 * [default](./projet_iamflying/iamflying_default.html)
 * [player](./projet_iamflying/iamflying_player.html)
 	

@@ -17,9 +17,6 @@
 * [PUEL GLIKSON Annaelle](https://annaespace.github.io/VR/)
 * [RANDRIAMANANA Marianne](https://marianner13.github.io/VR/)
 * [SANCHES Sara](https://saraschs.github.io/VR/)
-* [Eli](https://elibellah.github.io/VR/)
-
-* [test](https://wmurphyrd.github.io/aframe-physics-extras/examples/collision_response/)
 
 ## iamflying
 * [link](./projet_iamflying/iamflying.html)

@@ -1,11 +1,11 @@
-# Mention Numerique ENSAAMA
+# ENSAAMA DNMADE1 Numérique 2023-2024
 
-## liens github
+## liens etudiants
 
 * [BAKIR Ilian](https://ilianxx.github.io/vr/)
 * [BELLAHOUES Elissa](https://elibellah.github.io/VR/)
 * [BUGNET-SALLES Hugo](https://hugobugnet.github.io/Labyrinthe2/)
-* [CONILLEAU Kali](https://kali-cogi.github.io/VR/)
+<!-- * [CONILLEAU Kali](https://kali-cogi.github.io/VR/) -->
 * [CONTE Isadora](https://isadoraconte.github.io/VR/)
 * [FOURNIER Laureline](https://laureline5.github.io/VR/)
 * [GRAFF Sixtine](https://sixtinegf.github.io/VR/)

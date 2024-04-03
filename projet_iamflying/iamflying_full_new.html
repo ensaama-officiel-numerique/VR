@@ -164,6 +164,23 @@
         }
     });
 
+    // MUSIQUE
+    AFRAME.registerComponent('sound_loaded', {
+        init: function () {
+            var el = this.el;
+            el.addEventListener('sound-loaded', () => {
+                console.log(el.id + " chargé");
+                var entity = document.querySelector('[sound]');
+                entity.components.sound.playSound();
+                console.log("playing");
+            });
+            this.el.addEventListener('sound-error', () => {
+                console.log("erreur");
+            });
+        }
+    });
+
+
     </script>
 
 </head>
@@ -179,10 +196,16 @@
             <img id="sky1" src="./assets/evening_road_01_puresky_4k.jpg">
             <img id="sky2" src="./assets/sunflowers_puresky_4k.jpg">
             <img id="sky3" src="./assets/table_mountain_2_puresky_4k.jpg">
+
+            <audio id="vol" src="./assets/sailing_rodstewart.mp3"></audio>
         </a-assets>
 
         <!-- BASE -->
         <a-box position="0 0 0" color="grey"></a-box>
+
+        <!-- SON -->
+        <!-- <a-entity id="son" sound="src: #vol" sound_loaded></a-entity> -->
+        <a-sound src="#vol" autoplay="true" position="0 0 0" volume="1"></a-sound>
 
         <!-- DEBUT ETUDIANT -->
         <a-sky id="image-360" radius="500" change-sky radius="10" src="#sky0"></a-sky>
@@ -193,9 +216,15 @@
             <a-entity id="cam" camera position="0 0 0" 
                 currentposition="trace:false" 
                 look-controls wasd-controls="acceleration:10">
-                <a-entity id="lefthand" handposition="trace: false" oculus-touch-controls="hand: left"></a-entity>
-                <a-entity id="righthand" handposition="trace: false" oculus-touch-controls="hand: right" droite></a-entity>
-                <a-text id="txtlog" value="" align="center" color="#FF00FF" 
+                <a-entity id="lefthand" 
+                    position="0 0.5 0" handposition="trace: false" 
+                    oculus-touch-controls="hand: left">
+                </a-entity>
+                <a-entity id="righthand" 
+                    position="0 0.5 0" handposition="trace: false" 
+                    oculus-touch-controls="hand: right" droite>
+                </a-entity>
+                <a-text id="txtlog" value="" align="center" color="#FF6600" 
                     position="0 0 -1" rotation="0 0 0" scale="0.25 0.25 0.25">
                 </a-text>
             </a-entity>

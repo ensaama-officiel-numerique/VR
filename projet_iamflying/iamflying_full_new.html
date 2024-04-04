@@ -203,10 +203,6 @@
         <!-- BASE -->
         <a-box position="0 0 0" color="grey"></a-box>
 
-        <!-- SON -->
-        <!-- <a-entity id="son" sound="src: #vol" sound_loaded></a-entity> -->
-        <a-sound src="#rodstewart" autoplay="true" position="0 0 0" volume="1" loop="true"></a-sound>
-
         <!-- DEBUT ETUDIANT -->
         <a-sky id="image-360" radius="500" change-sky radius="10" src="#sky0"></a-sky>
         <!-- FIN ETUDIANT -->
@@ -224,9 +220,12 @@
                     position="0 0.5 0" handposition="trace: false" 
                     oculus-touch-controls="hand: right" droite>
                 </a-entity>
-                <a-text id="txtlog" value="" align="center" color="#00FF00" 
+                <a-text id="txtlog" value="" align="center" color="#0000FF" 
                     position="0 0 -1" rotation="0 0 0" scale="0.25 0.25 0.25">
                 </a-text>
+                <!-- SON -->            
+                <!-- <a-entity id="son" sound="src: #vol" sound_loaded></a-entity> -->
+                <a-sound src="#rodstewart" autoplay="true" position="0 0 0" volume="1" loop="true"></a-sound>
             </a-entity>
         </a-entity>
 
